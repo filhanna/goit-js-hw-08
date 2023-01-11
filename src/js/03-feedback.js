@@ -14,6 +14,7 @@ formData.email =
   JSON.parse(localStorage.getItem(STORAGE_KEY)) === null
     ? ''
     : JSON.parse(localStorage.getItem(STORAGE_KEY)).email;
+// formData.email = JSON.parse(localStorage.getItem(STORAGE_KEY)).email || '';
 formData.message =
   JSON.parse(localStorage.getItem(STORAGE_KEY)) === null
     ? ''
@@ -43,4 +44,7 @@ function onFormSubmit(evt) {
   evt.currentTarget.reset();
   console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
   localStorage.removeItem(STORAGE_KEY);
+  formData.email = '';
+
+  formData.message = '';
 }
